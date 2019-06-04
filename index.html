@@ -3,9 +3,58 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
+	<style>
+ .circles {
+	 display: flex;
+ }
+
+ .circle {
+	 position: relative;
+	 margin-right: 5%;
+	 padding-top: 30%;
+	 width: 30%;
+	 background-color: palegreen;
+	 border-radius: 100%;
+ }
+
+ .circle span {
+	 position: absolute;
+	 top: 50%;
+	 left: 50%;
+	 transform: translateX(-50%) translateY(-50%);
+ }
+
+ #middle-circle {
+	 background-color: cornflowerblue;
+ }
+
+ p span {
+	 text-decoration: underline;
+ }
+</style>
 </head>
 <body>
-<h1>Arrays and Objects</h1>
+
+<h1>Qu'est-ce que c'est le DOM ?</h1>
+
+<p>Le Document Object Model ou DOM (pour modèle objet de document) est une interface de programmation pour les documents HTML, XML et SVG. Il fournit une <span>représentation structurée du document sous forme d'un arbre</span> et définit la façon dont la structure peut être manipulée par les programmes, en termes de style et de contenu.</p>
+
+<p>Le DOM représente le document <span>comme un ensemble de nœuds</span> et d'objets possédant des propriétés et des méthodes. Les nœuds peuvent également avoir des gestionnaires d'événements qui se déclenchent lorsqu'un événement se produit. Cela permet de manipuler des pages web grâce à des scripts et/ou des langages de programmation.</p>
+
+<p> Les nœuds peuvent être associés à des gestionnaires d'événements. Une fois qu'un événement est déclenché, les gestionnaires d'événements sont exécutés.</p>
+
+<div class="circles">
+  <div class="circle">
+    <span>Div 1</span>
+  </div>
+  <div class="circle" id="middle-circle">
+    <span>Div 2</span>
+  </div>
+  <div class="circle">
+    <span>Div 3</span>
+  </div>
+</div>
+
 
 	<script src="script.js"></script>
 
