@@ -4,57 +4,105 @@
 	<meta charset="UTF-8">
 	<title>Document</title>
 	<style>
- .circles {
-	 display: flex;
- }
+	body {
+	  background-color: #efeeed;
+	  font-family: Arial, Helvetica, sans-serif;
+	}
 
- .circle {
-	 position: relative;
-	 margin-right: 5%;
-	 padding-top: 30%;
-	 width: 30%;
-	 background-color: palegreen;
-	 border-radius: 100%;
- }
+	.magazine-articles {
+	  display: flex;
+	  justify-content: space-between;
+	}
 
- .circle span {
-	 position: absolute;
-	 top: 50%;
-	 left: 50%;
-	 transform: translateX(-50%) translateY(-50%);
- }
+	.magazine-article {
+	  width: 24%;
+	  background-color: #FFF;
+	  border-radius: 4px;
+	}
 
- #middle-circle {
-	 background-color: cornflowerblue;
- }
+	.magazine-article img {
+	  width: 100%;
+	}
 
- p span {
-	 text-decoration: underline;
- }
+	.magazine-article-content {
+	  padding: 0 1rem;
+	}
+
+	.text-highlight {
+	  text-decoration: line-through;
+	}
+	.cookies-notice {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2rem;
+  width: 100%;
+  background-color: rgba(0,0,0,.45);
+  color: #FFF;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.cookies-text {
+  margin-right: 3rem;
+  font-style: italic;
+}
+
+.cookies-button {
+  display: inline-block;
+  padding: .7rem 1rem;
+  background-color: green;
+  border-radius: 4px;
+  color: #FFF;
+}
 </style>
 </head>
 <body>
 
-<h1>Qu'est-ce que c'est le DOM ?</h1>
 
-<p>Le Document Object Model ou DOM (pour modèle objet de document) est une interface de programmation pour les documents HTML, XML et SVG. Il fournit une <span>représentation structurée du document sous forme d'un arbre</span> et définit la façon dont la structure peut être manipulée par les programmes, en termes de style et de contenu.</p>
+<h1 id="page-title">Page title</h1>
+ <p id="page-subtitle">Page subtitle</p>
 
-<p>Le DOM représente le document <span>comme un ensemble de nœuds</span> et d'objets possédant des propriétés et des méthodes. Les nœuds peuvent également avoir des gestionnaires d'événements qui se déclenchent lorsqu'un événement se produit. Cela permet de manipuler des pages web grâce à des scripts et/ou des langages de programmation.</p>
+ <p class="page-text">
+	 <em>Felis catus</em> has had a very long relationship with humans. Ancient Egyptians may have first domesticated cats as early as <span class="text-highlight">4,000 years ago.</span>
+ </p>
+ <p class="page-text">Text to replace</p>
+ <p class="page-text">
+	 The cats' skill in killing them may have first earned the <span class="text-highlight">affectionate attention</span> of humans.
+ </p>
 
-<p> Les nœuds peuvent être associés à des gestionnaires d'événements. Une fois qu'un événement est déclenché, les gestionnaires d'événements sont exécutés.</p>
+ <section>
+	 <h2>Our featured articles:</h2>
 
-<div class="circles">
-  <div class="circle">
-    <span>Div 1</span>
-  </div>
-  <div class="circle" id="middle-circle">
-    <span>Div 2</span>
-  </div>
-  <div class="circle">
-    <span>Div 3</span>
-  </div>
-</div>
+	 <div class="magazine-articles">
+		 <article>
+			 <img src="http://lorempixel.com/400/300/cats/?id=1">
+			 <div class="magazine-article-content">
+				 <h1>Cats are one of, if not the most, popular pet in the world.</h1>
+			 </div>
+		 </article>
 
+		 <article>
+			 <img src="http://lorempixel.com/400/300/cats/?id=2">
+			 <div class="magazine-article-content">
+				 <h1>There are over 500 million domestic cats in the world.</h1>
+			 </div>
+		 </article>
+
+		 <article>
+			 <img src="http://lorempixel.com/400/300/cats/?id=3">
+			 <div class="magazine-article-content">
+				 <h1>Cats and humans have been associated for nearly 10000 years.</h1>
+			 </div>
+		 </article>
+
+		 <article>
+			 <img src="http://lorempixel.com/400/300/cats/?id=4">
+			 <div class="magazine-article-content">
+				 <h1>Cats conserve energy by sleeping for an average of 13 hours a day.</h1>
+			 </div>
+		 </article>
+	 </div>
+ </section>
 
 	<script src="script.js"></script>
 

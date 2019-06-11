@@ -1,92 +1,41 @@
 'use strict';
 
-/*let myArr = [1, 2, 3];
+/* Sélectionnez tous les paragraphes,
+Sélectionnez  tous les divs par le nom de class
+Sélectionnez le div bleu
+Sélectionnez les spans qui se trouvent dans les paragraphes
 
-let result = 0;
+const paragraphs = document.getElementsByTagName('p') // liste de nodes
+console.log(paragraphs);
 
-myArr.forEach(function(element) {
-let res = 0;
-debugger;
-result = result + element;
-})*/
+// Modifier le texte dans un node
+paragraphs[0].innerText = 'Hello World';
 
-/* EXERCICE 1*/
+const paragraphs2 = document.querySelectorAll('p');
+console.log(paragraphs2);
 
-let dividedNumbers = [] ;
-let numbers = [0, 1, 2, 3, 4, 5];
-let result = [0];
+// Modifier la structure html
+paragraphs2[1].innerHTML = '<strong>Hello you !</strong>'
 
-numbers.forEach(function(elem) {
-result = elem / 2 ;
-dividedNumbers.push(result);
-})
+// Sélectionner tous les divs par le nom de class
+const circles = document.getElementsByClassName('circle')
+const circles2 = document.querySelectorAll('.circle')
 
-console.log(dividedNumbers);
+circles[0].style.backgroundColor = 'red';
 
-/* EXERCICE 2*/
+// Sélectionner le cercle du milieu
+const myDiv = document.getElementById('middle-circle');
+const myDiv2 = document.querySelector('#middle-circle');
+console.log('myDiv2',myDiv2)
 
-let myTab = [1, -2, 3, 4, -9, 6];
-let myTabPlus = [] ;
-
-myTab.forEach(function(elem) {
-  if (elem > 0) {
-  myTabPlus.push(elem);
-  }
-})
-console.log(myTabPlus);
-
-/* EXERCICE 3*/
-
-let myCelcius = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-let myFinalResult = [0];
-let myFahrenheit = [];
-
-myCelcius.forEach(function(elem) {
-  myFinalResult = (elem * 9/5) + 32;
-  myFahrenheit.push(myFinalResult);
-})
-console.log(myFahrenheit);
-
-/* OBJECTS
-let user = {
-  username: 'Sasha',
-  type: 'Human',
-  age: 23,
-  friend: {
-    name: 'Claire'
-  }
-}
-
-// Propriété : Username
-// Clef de propriété : 'username' (toujours une chaine de caractères)
-// Valeur de propriété : 'Sasha'
-
-console.log(user.username) // Sasha
-const objKey = 'type'
-console.log(user[objKey]); // Human
-console.log(user['type']); // Human */
-
-/* EXERCICE 1 */
-
-let user = {
-  id : 3654,
-  name : 'TANGUY Chloe',
-  car : {
-    id: 'AA-356-AA',
-    brand : 'Peugeot',
-    color: 'Red',
-  }
-}
-console.log(user.id);
-console.log(user.car.id);
-console.log(user.car.color);
-
-/* EXERCICE 2 */
+// Modifier la class
+myDiv2.classList.remove('circle'); //supprimer la class
+myDiv.classList.add('square'); //ajouter une class
 
 let musician = {
-  firstname : 'Hans Florian',
+  firstname : ' Hans Florian',
   lastname : 'Zimmer',
-  surname : 'Hans Zimmer',
+  nickname : 'Hans Zimmer',
   albums : [
   {
   title: 'Spirit: Stallion of the Cimarron',
@@ -103,84 +52,70 @@ let musician = {
 ]
 }
 
-console.log('Prénom du musicien :', musician.firstname);
-console.log('Titre du premier album :',musician.albums[0].title);
-console.log('Cinquième chanson de la Track List de Inception :',musician.albums[1].trackListing[4]);
+const musicianPseudo = document.querySelector('#js-artist');
+musicianPseudo.style.color = 'blue';
+musicianPseudo.innerHTML = (`${musician.lastname.concat(musician.firstname)}`);
+console.log('musicianPseudo',musicianPseudo);
 
+const musicianRealName = document.querySelector('#js-artist-real-name');
+musicianRealName.innerHTML = musician.nickname;
+console.log('musicianRealName',musicianRealName);
 
-/* EXERCICE 3 */
+const musicianAlbumTitle = document.querySelector('.js-album-title');
+musicianAlbumTitle.innerHTML = musician.albums[0].title;
+console.log('musicianAlbumTitle',musicianAlbumTitle);
 
-let cat = {
-  name : 'Cookie',
-  favoritePlaces: ['Random box', 'Laps', 'Christmas tree'],
-  petMyCat: function () {
-    console.log('Mrrr',petMyCat);
-  }
-}
+const musicianYear = document.querySelector('#js-release-date span');
+musicianYear.innerHTML = musician.albums[0].year;
+console.log('musicianYear',musicianYear);
 
-console.log('Premier endroit préféré :',cat.favoritePlaces[0]);
+const musicianNumberSongs = document.querySelector('#js-songs-count');
+musicianNumberSongs.innerHTML = musician.albums[0].numberSongs;
+console.log('musicianNumberSongs',musicianNumberSongs);
 
-/* EXERCICE 4 */
+const musicianFavoriteSong = document.querySelector('.js-favourite-song');
+musicianFavoriteSong.innerHTML = musician.albums[0].trackListing[2];
+console.log('musicianFavoriteSong',musicianFavoriteSong);
+musicianFavoriteSong.style.fontWeight = 'bold';
 
-const myPets = [
-    {
-      pet: 'cat',
-      name: 'Cookie',
-      occupation: 'sleeping all day',
-      says: () => { 'Miaou!' }
-    },
-    {
-      pet: 'dog',
-      name: 'Toffee',
-      occupation: 'walking in the park',
-      says: () => { 'Wouf!' }
-    },
-    {
-      pet: 'parrot',
-      name: 'Kesha',
-      occupation: 'mocking other pets',
-      says: () => { 'Hehe, that was fun!' }
-    }
-  ]
+const musicianFamousSong= document.querySelector('#js-famous-song');
+musicianFamousSong.innerHTML = musician.albums[0].trackListing[3];
+console.log('musicianFamousSong',musicianFamousSong);
+musicianFamousSong.style.fontWeight = 'bold';
 
-  myPets.forEach(function(pet) {
-    console.log(`My pet ${pet.pet} named ${pet.name} loves ${pet.occupation} and keeps saying ${pet.says()}`);
-  })
+const musicianLongestSong= document.querySelector('#js-longest-song');
+musicianLongestSong.innerHTML = musician.albums[0].trackListing[6];
+console.log('musicianLongestSong',musicianLongestSong);
+musicianLongestSong.style.fontWeight = 'bold';
 
-/*DOM*/
+EXERCICE 2*/
 
-console.log(window);
+const mainPageTitle = document.getElementById('page-title');
+mainPageTitle.innerText = 'Cats are awesome';
+mainPageTitle.style.textDecoration = 'underline';
 
-  // par le nom de la balise (liste de nodes/noeuds)
-  document.getElementsByTagName('p');
-  document.querySelectorAll('p');
+const myParagraph = document.querySelector('#page-subtitle');
+myParagraph.innerHTML = 'Domestic cats, no matter their breed, are <strong>all members of one species.</strong>';
+myParagraph.style.color = 'grey';
 
-  // par le nom de classe (liste)
-  document.getElementsByClassName('my-class');
-  document.querySelectorAll('.my-class');
+const paragraphs = document.getElementsByClassName('page-text');
+paragraphs[1].innerHTML = 'Plentiful rodents probably drew wild felines to human communities.';
 
-  // par id (node)
-  document.getElementById('my-id');
-  document.querySelector('#my-id');
+const myHighlight = document.querySelectorAll('.text-highlight');
+myHighlight.forEach(function(elem) {
+elem.classList.remove('text-highlight');
+})
 
-  let myBody = document.getElementsByTagName('body');
+const myImage = document.getElementsByTagName('img');
+myImage[0].style.filter = 'grayscale(100%)';
+myImage[3].style.filter = 'grayscale(100%)';
 
-  console.log('myBody',myBody);
+// Créer un node
+const myParagraphe = document.createElement ('p');
+myParagraphe.innerText = 'Hello';
+document.querySelector('body').appendChild(myParagraphe)
 
-  /*EXERCICE 1: TROUVER UNE NODE*/
-
-  const myParagraphs = document.getElementsByTagName('p');
-  console.log('Paragraphes',myParagraphs);
-  document.querySelectorAll('p');
-
-  const myDiv = document.getElementsByClassName('circle');
-  console.log('Divisions',myDiv);
-  document.querySelectorAll('.circle');
-
-  const myBlueDiv = document.getElementById('middle-circle');
-  console.log('Paragraphes',myBlueDiv);
-  document.querySelector('#middle-circle');
-
-  const myParagraphSpan = document.getElementsByTagName('p.span');
-  console.log(myParagraphSpan);
-  document.querySelectorAll('p.span');
+/* EXERCICE 3*/
+const myDivision = document.createElement ('p');
+myDivision.innerText = 'Hello';
+document.querySelector('body').appendChild(myParagraphe)
