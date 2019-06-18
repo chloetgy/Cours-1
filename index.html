@@ -2,109 +2,19 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
-	<style>
-	body {
-	  background-color: #efeeed;
-	  font-family: Arial, Helvetica, sans-serif;
-	}
-
-	.magazine-articles {
-	  display: flex;
-	  justify-content: space-between;
-	}
-
-	.magazine-article {
-	  width: 24%;
-	  background-color: #FFF;
-	  border-radius: 4px;
-	}
-
-	.magazine-article img {
-	  width: 100%;
-	}
-
-	.magazine-article-content {
-	  padding: 0 1rem;
-	}
-
-	.text-highlight {
-	  text-decoration: line-through;
-	}
-	.cookies-notice {
-  display: none;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem 2rem;
-  width: 100%;
-  background-color: rgba(0,0,0,.45);
-  color: #FFF;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.cookies-text {
-  margin-right: 3rem;
-  font-style: italic;
-}
-
-.cookies-button {
-  display: inline-block;
-  padding: .7rem 1rem;
-  background-color: green;
-  border-radius: 4px;
-  color: #FFF;
+	<title>Events</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.3.0/css/flag-icon.min.css">
+<style>
+canvas {
+	background-color: aquamarine;
 }
 </style>
 </head>
 <body>
-
-
-<h1 id="page-title">Page title</h1>
- <p id="page-subtitle">Page subtitle</p>
-
- <p class="page-text">
-	 <em>Felis catus</em> has had a very long relationship with humans. Ancient Egyptians may have first domesticated cats as early as <span class="text-highlight">4,000 years ago.</span>
- </p>
- <p class="page-text">Text to replace</p>
- <p class="page-text">
-	 The cats' skill in killing them may have first earned the <span class="text-highlight">affectionate attention</span> of humans.
- </p>
-
- <section>
-	 <h2>Our featured articles:</h2>
-
-	 <div class="magazine-articles">
-		 <article>
-			 <img src="http://lorempixel.com/400/300/cats/?id=1">
-			 <div class="magazine-article-content">
-				 <h1>Cats are one of, if not the most, popular pet in the world.</h1>
-			 </div>
-		 </article>
-
-		 <article>
-			 <img src="http://lorempixel.com/400/300/cats/?id=2">
-			 <div class="magazine-article-content">
-				 <h1>There are over 500 million domestic cats in the world.</h1>
-			 </div>
-		 </article>
-
-		 <article>
-			 <img src="http://lorempixel.com/400/300/cats/?id=3">
-			 <div class="magazine-article-content">
-				 <h1>Cats and humans have been associated for nearly 10000 years.</h1>
-			 </div>
-		 </article>
-
-		 <article>
-			 <img src="http://lorempixel.com/400/300/cats/?id=4">
-			 <div class="magazine-article-content">
-				 <h1>Cats conserve energy by sleeping for an average of 13 hours a day.</h1>
-			 </div>
-		 </article>
-	 </div>
- </section>
+	
+	<canvas width="400" height="600" id="js-canvas"></canvas>
 
 	<script src="script.js"></script>
-
 </body>
 </html>
